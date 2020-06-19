@@ -4,7 +4,7 @@ import SearchBar from './search_bar';
 import Gif from './gif';
 
 class App extends Component {
-  render () {
+  render() {
     return (
       <div>
         <div className="left-scene">
@@ -13,8 +13,9 @@ class App extends Component {
             <Gif />
           </div>
         </div>
-          <div className="right-scene"></div>
+        <div className="right-scene">
         </div>
+      </div>
     );
   }
 }
