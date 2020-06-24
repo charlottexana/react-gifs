@@ -19,22 +19,21 @@ class App extends Component {
   search = (query) => {
     giphy('6dxa4QIP1sjGlRUJeLzoF268SzSjwZll').search({
       q: 'query',
-      rating: 'g'
-    }, function (error, result) {
-      console.log(result);
+      rating: 'g',
+      limit: 10
+    }, (error, result) => {
+      this.setState({
+        gifs: result.data
+      });
     });
 
   }
 
   render() {
-    const gifs = [
-      { id: "9NAXpI52kjBjG" }, { id: "S0A0PBw8pZNFC"},
-    ];
-
     return (
       <div>
         <div className="left-scene">
-          <SearchBar />
+          <SearchBar searchFunction={this.search} />
           <div className="selected-gif">
             <Gif id={this.state.selectedGifId} />
           </div>
